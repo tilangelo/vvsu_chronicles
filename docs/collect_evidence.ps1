@@ -60,6 +60,7 @@ foreach ($relative in @('game\project.godot','game\tileset.tres')) {
     $hashes += [ordered]@{path = $relative.Replace('\','/'); sha256 = (Get-FileHash -LiteralPath (Join-Path $ProjectRoot $relative) -Algorithm SHA256).Hash}
 }
 $tests = @(
+    @{name='check_fight_club'; expected='^PASS fight:'},
     @{name='check_navigation_texts'; expected='^PASS navigation:'},
     @{name='check_day_quests'; expected='^PASS day:'},
     @{name='check_people_update'; expected='^PASS update:'},

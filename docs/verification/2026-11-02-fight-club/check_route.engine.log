@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS input movement and pause
+PASS map entrance | reachable samples: 670
+PASS map corridor_1 | reachable samples: 537
+PASS map corridor_4 | reachable samples: 328
+PASS map class_1421 | reachable samples: 179
+PASS map winter_garden | reachable samples: 3244
+PASS map winter_garden_lower | reachable samples: 361
+PASS map class_1_a | reachable samples: 179
+PASS map class_1_b | reachable samples: 179
+PASS map class_1_c | reachable samples: 179
+PASS map toilet_m | reachable samples: 116
+PASS map toilet_f | reachable samples: 116
+PASS map lounge_1 | reachable samples: 148
+PASS route: 12 maps, 25 transitions, all landing points reachable

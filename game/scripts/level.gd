@@ -14,6 +14,7 @@ const FixtureVisual = preload("res://scripts/fixture_visual.gd")
 const DoorVisual = preload("res://scripts/door_visual.gd")
 const ArchVisual = preload("res://scripts/arch_visual.gd")
 const ATMVisual = preload("res://scripts/atm_visual.gd")
+const FightClub = preload("res://scripts/fight_club.gd")
 const SPEED := 4.0
 const UNDER_DEPTH := 72.0
 const TITLES := {
@@ -54,6 +55,7 @@ var day = CampusDay.new()
 var dialogue_rules = CampusDialogue.new()
 var quest_tracker: CanvasLayer
 var conversation_options: Array[Dictionary] = []
+var fight
 
 
 func _ready() -> void:
@@ -76,8 +78,13 @@ func _ready() -> void:
 	dialog = DialogBox.new()
 	add_child(dialog)
 	dialog.people["atm"] = {"name": "Банкомат · оплата услуг"}
+	dialog.people["tyler"] = {"name": "Тайлер Дёрден"}
+	dialog.people["fight_result"] = {"name": "После боя"}
 	dialog.line_finished.connect(_on_dialog_line_finished)
 	dialog.choice_made.connect(_on_dialog_choice)
+	fight = FightClub.new()
+	add_child(fight)
+	fight.setup(self)
 	change_map("entrance")
 
 
@@ -88,7 +95,12 @@ func _physics_process(delta: float) -> void:
 		exit_cooldown = maxf(exit_cooldown,0.25)
 		hero_sprite.stop()
 		return
-	day.advance(delta, str(model.data["id"]))
+	if fight.intro_pending and str(model.data["id"]) == "toilet_m":
+		fight._begin_intro()
+		if dialog.is_open():
+			return
+	if not fight.active:
+		day.advance(delta, str(model.data["id"]))
 	quest_tracker.refresh(day, str(model.data["id"]))
 	people.tick(delta,model,to_screen,hero_pos)
 	environment_animation.tick(delta,hero_pos)
@@ -102,12 +114,18 @@ func _physics_process(delta: float) -> void:
 		grid_dir = grid_dir.normalized() * dir.length()
 	var step := grid_dir * SPEED * delta
 	var previous_position := hero_pos
-	if not model.blocked(hero_pos + Vector2(step.x, 0.0)) and not people.blocks_walker(hero_pos + Vector2(step.x, 0.0)):
+	if not model.blocked(hero_pos + Vector2(step.x, 0.0)) and not people.blocks_walker(hero_pos + Vector2(step.x, 0.0)) and not fight.blocks_player(hero_pos + Vector2(step.x, 0.0)):
 		hero_pos.x += step.x
-	if not model.blocked(hero_pos + Vector2(0.0, step.y)) and not people.blocks_walker(hero_pos + Vector2(0.0, step.y)):
+	if not model.blocked(hero_pos + Vector2(0.0, step.y)) and not people.blocks_walker(hero_pos + Vector2(0.0, step.y)) and not fight.blocks_player(hero_pos + Vector2(0.0, step.y)):
 		hero_pos.y += step.y
 	_place_hero()
 	hero_sprite.advance(delta, hero_pos.distance_to(previous_position), dir)
+	if fight.active:
+		fight.tick(delta,dir)
+		if dialog.is_open():
+			return
+		_update_portal_hint()
+		return
 	_update_portal_hint()
 	if Input.is_action_just_pressed("interact") and exit_cooldown <= 0.0:
 		if not use_exit():
@@ -140,6 +158,10 @@ func change_map(id: String, spawn: Array = []) -> void:
 		portal_label.text = "Не удалось загрузить локацию"
 		return
 	people.reset()
+	if fight != null:
+		fight.active = false
+		fight.intro_pending = false
+		fight.panel.visible = false
 	environment_animation.reset()
 	door_nodes.clear()
 	for portal: Dictionary in model.data.get("exits", []):
@@ -166,6 +188,8 @@ func change_map(id: String, spawn: Array = []) -> void:
 	var world := _add_tiles(level_root, model.data)
 	people.populate(world,model.data,true,to_screen,model.legend)
 	world.add_child(hero)
+	if id == "toilet_m":
+		fight.enter(world)
 	var start: Array = spawn if not spawn.is_empty() else model.data["spawn"]
 	hero_pos = Vector2(float(start[0]) + 0.5, float(start[1]) + 0.5)
 	day.check_attendance(id)
@@ -187,6 +211,8 @@ func change_map(id: String, spawn: Array = []) -> void:
 
 
 func use_exit() -> bool:
+	if fight != null and fight.active:
+		return false
 	var portal: Dictionary = model.exit_at(hero_pos)
 	if portal.is_empty():
 		return false
@@ -355,6 +381,10 @@ func _place_hero() -> void:
 
 
 func _update_portal_hint() -> void:
+	if fight != null and fight.active:
+		portal_label.visible = true
+		portal_label.text = "F / пробел / X — удар · держи направление к сопернику"
+		return
 	var portal: Dictionary = model.exit_at(hero_pos)
 	portal_label.visible = not portal.is_empty()
 	if not portal.is_empty():
@@ -390,7 +420,9 @@ func begin_talk(npc: Dictionary) -> void:
 
 
 func _on_dialog_line_finished() -> void:
-	if conversation_phase == "greeting":
+	if conversation_phase == "fight_intro":
+		_close_dialog()
+	elif conversation_phase == "greeting":
 		conversation_phase = "choices"
 		var who := str(conversation["spec"]["who"])
 		conversation_options = dialogue_rules.options(who,day,str(model.data["id"]))
@@ -424,11 +456,14 @@ func _on_dialog_choice(index: int) -> void:
 
 
 func _close_dialog() -> void:
+	var start_fight := conversation_phase == "fight_intro"
 	dialog.close()
 	conversation_phase = ""
 	conversation_options.clear()
 	exit_cooldown = 0.3
 	quest_tracker.refresh(day,str(model.data["id"]))
+	if start_fight:
+		fight.start()
 
 
 func _nearby_atm() -> Dictionary:
@@ -534,7 +569,7 @@ func _install_controls() -> void:
 	var accept_key := InputEventKey.new()
 	accept_key.physical_keycode = KEY_E
 	_bind_control("ui_accept", accept_key)
-	for action: String in ["move_left", "move_right", "move_up", "move_down", "interact", "pause_route", "zoom_in", "zoom_out"]:
+	for action: String in ["move_left", "move_right", "move_up", "move_down", "interact", "pause_route", "zoom_in", "zoom_out", "fight_attack"]:
 		if not InputMap.has_action(action):
 			InputMap.add_action(action, 0.22)
 	var keys := {
@@ -542,13 +577,14 @@ func _install_controls() -> void:
 		"move_up": [KEY_W, KEY_UP], "move_down": [KEY_S, KEY_DOWN],
 		"interact": [KEY_E, KEY_ENTER], "pause_route": [KEY_ESCAPE],
 		"zoom_in": [KEY_EQUAL, KEY_KP_ADD], "zoom_out": [KEY_MINUS, KEY_KP_SUBTRACT],
+		"fight_attack": [KEY_F, KEY_SPACE],
 	}
 	for action: String in keys:
 		for code: int in keys[action]:
 			var key := InputEventKey.new()
 			key.physical_keycode = code
 			_bind_control(action, key)
-	var buttons := {"move_left": JOY_BUTTON_DPAD_LEFT, "move_right": JOY_BUTTON_DPAD_RIGHT, "move_up": JOY_BUTTON_DPAD_UP, "move_down": JOY_BUTTON_DPAD_DOWN, "interact": JOY_BUTTON_A, "pause_route": JOY_BUTTON_START}
+	var buttons := {"move_left": JOY_BUTTON_DPAD_LEFT, "move_right": JOY_BUTTON_DPAD_RIGHT, "move_up": JOY_BUTTON_DPAD_UP, "move_down": JOY_BUTTON_DPAD_DOWN, "interact": JOY_BUTTON_A, "pause_route": JOY_BUTTON_START, "fight_attack": JOY_BUTTON_X}
 	for action: String in buttons:
 		var button := InputEventJoypadButton.new()
 		button.button_index = buttons[action]

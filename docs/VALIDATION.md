@@ -3,18 +3,18 @@
 Дата среза: **2 ноября 2026**. Проверялся основной проект:
 `C:\Users\angelo\Desktop\ВВГУ — Хроники Кампуса\game`.
 
-Все **10 сценариев Godot завершились успешно**, без SCRIPT ERROR/ERROR в сохранённых журналах. Точная версия — `4.7.2.stable.official.ed1daf0bf`. Это результат скриптовых проверок, не количество unit-тестов и не измерение процентного покрытия.
+Все **11 сценариев Godot завершились успешно**, без SCRIPT ERROR/ERROR в сохранённых журналах. Точная версия — `4.7.2.stable.official.ed1daf0bf`. Это результат скриптовых проверок, не количество unit-тестов и не измерение процентного покрытия.
 
 ## Сохранённые материалы
 
-[verification/2026-11-02-room-numbers/snapshot.json](verification/2026-11-02-room-numbers/snapshot.json) содержит:
+[verification/2026-11-02-fight-club/snapshot.json](verification/2026-11-02-fight-club/snapshot.json) содержит:
 
 - captured_at с временным смещением, путь проверенной копии, версию движка;
 - 12 карт, 25 зон перехода, 83 размещения NPC, 6 с маршрутами;
 - 16 листов персонажей, 136 статических / 166 всех записей каталога, 10 циклов / 5 полос анимации;
 - таблицы карт и всех переходов с rect/spawn/contextual_return;
 - имя, код выхода, булев passed, итоговую строку и путь журнала каждого сценария;
-- SHA-256 **88 файлов runtime**: скрипты, сцены, карты, PNG, project.godot, tileset.tres.
+- SHA-256 **90 файлов runtime**: скрипты, сцены, карты, PNG, project.godot, tileset.tres.
 
 Для каждого сценария сохранены stdout/stderr `<name>.log` и журнал движка `<name>.engine.log`. Проверка выполнялась headless; изображения получены отдельными запусками с рендерингом и не генерируются этим прогоном.
 
@@ -24,16 +24,17 @@
 
 | Сценарий game/tools/ | Что проверяет | Сохранённый результат |
 |---|---|---|
-| check_navigation_texts.gd | Реальные Label в каждой карте, подписи пяти дверей 4 этажа и аудиторий 1 этажа, отсутствие прежнего названия в HUD/данных/диалогах | [PASS navigation](verification/2026-11-02-room-numbers/check_navigation_texts.log) |
-| check_day_quests.gd | Все 6 порядков трёх задач; запрет платежа до наставника; отсутствие повторного списания/нехватка средств; часы; ранний/поздний приход и ожидание; пауза/диалоги; E у ATM; HUD; вариации реплик, страницы; новый день | [PASS day](verification/2026-11-02-room-numbers/check_day_quests.log) |
-| check_people_update.gd | Меню → игру, лист/8 направлений героя, блокировка/idle, отсутствие дублирования ввода, NPC/пути, диалог, аквариум, турникет и двери | [PASS update](verification/2026-11-02-room-numbers/check_people_update.log) |
-| check_route.gd | 12 карт, 25 реальных вызовов перехода, точки появления, связность; подходы к гардеробщице/наставникам/преподавателю/ATM; ввод и пауза | [PASS route](verification/2026-11-02-room-numbers/check_route.log) |
-| check_arch_atm.gd | Замена двери у гардероба аркой, наличие/размещение и коллизия ATM | [0 failures](verification/2026-11-02-room-numbers/check_arch_atm.log) |
-| check_doorway_visuals.gd | Структура лестницы/стыков и наличие дверей у входов | [0 failures](verification/2026-11-02-room-numbers/check_doorway_visuals.log) |
-| check_rooms.gd | Нужные отдельные комнаты/переходы и блокировка за лестницей №2 | [0 failures](verification/2026-11-02-room-numbers/check_rooms.log) |
-| check_corridor.gd | Свободная архитектурная полоса, положение/разворот лестницы, мебель | [0 failures](verification/2026-11-02-room-numbers/check_corridor.log) |
-| check_fixes.gd | Гардероб, слои покрытия, доступ коридора, запуск/остановка ходьбы | [0 regressions](verification/2026-11-02-room-numbers/check_fixes.log) |
-| check_stair_return.gd | Возврат из зимнего сада к правильному исходному коридору | [0 failures](verification/2026-11-02-room-numbers/check_stair_return.log) |
+| check_fight_club.gd | Мужской/женский туалет, вступление, движение и управление, атака/уклонение, здоровье, победа/выход и поражение/зимний сад | [PASS fight](verification/2026-11-02-fight-club/check_fight_club.log) |
+| check_navigation_texts.gd | Реальные Label в каждой карте, подписи пяти дверей 4 этажа и аудиторий 1 этажа, отсутствие прежнего названия в HUD/данных/диалогах | [PASS navigation](verification/2026-11-02-fight-club/check_navigation_texts.log) |
+| check_day_quests.gd | Все 6 порядков трёх задач; запрет платежа до наставника; отсутствие повторного списания/нехватка средств; часы; ранний/поздний приход и ожидание; пауза/диалоги; E у ATM; HUD; вариации реплик, страницы; новый день | [PASS day](verification/2026-11-02-fight-club/check_day_quests.log) |
+| check_people_update.gd | Меню → игру, лист/8 направлений героя, блокировка/idle, отсутствие дублирования ввода, NPC/пути, диалог, аквариум, турникет и двери | [PASS update](verification/2026-11-02-fight-club/check_people_update.log) |
+| check_route.gd | 12 карт, 25 реальных вызовов перехода, точки появления, связность; подходы к гардеробщице/наставникам/преподавателю/ATM; ввод и пауза | [PASS route](verification/2026-11-02-fight-club/check_route.log) |
+| check_arch_atm.gd | Замена двери у гардероба аркой, наличие/размещение и коллизия ATM | [0 failures](verification/2026-11-02-fight-club/check_arch_atm.log) |
+| check_doorway_visuals.gd | Структура лестницы/стыков и наличие дверей у входов | [0 failures](verification/2026-11-02-fight-club/check_doorway_visuals.log) |
+| check_rooms.gd | Нужные отдельные комнаты/переходы и блокировка за лестницей №2 | [0 failures](verification/2026-11-02-fight-club/check_rooms.log) |
+| check_corridor.gd | Свободная архитектурная полоса, положение/разворот лестницы, мебель | [0 failures](verification/2026-11-02-fight-club/check_corridor.log) |
+| check_fixes.gd | Гардероб, слои покрытия, доступ коридора, запуск/остановка ходьбы | [0 regressions](verification/2026-11-02-fight-club/check_fixes.log) |
+| check_stair_return.gd | Возврат из зимнего сада к правильному исходному коридору | [0 failures](verification/2026-11-02-fight-club/check_stair_return.log) |
 
 check_corridor очищает клетки NPC, чтобы оценивать геометрию без населения. В отличие от него check_route работает с коллизиями людей. Название check_doorway_visuals означает проверку данных/структуры, а не автоматическое сравнение пикселей картинки.
 
@@ -77,8 +78,10 @@ $godotExe = 'C:\Users\angelo\Desktop\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-
 7. В новом запуске остаться снаружи после 13:30; проверить подпись опоздания и поздний вход.
 8. Проверить чтение длинных тем/страниц, ответы клавиатурой и остановку часов в паузе/диалоге.
 9. Перейти между уровнями зимнего сада и вернуться в исходный коридор; проверить арку, белую стену и препятствия.
+10. Войти в мужской туалет, прочитать правила, проверить движение и F/пробел/X, уйти от замаха. Проверить победу и выход; в новом запуске — поражение и появление в зимнем саду.
 
 ## Что не доказано
 
 Нет физического теста аркадного контроллера, экспорта/запуска на Batocera, измерений производительности, длительного нагрузочного теста, пользовательской приёмки последнего дня и исследования образовательной эффективности. Нет утверждения «ошибок не осталось» или «продукт готов к релизу».
+
 

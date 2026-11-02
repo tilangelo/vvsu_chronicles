@@ -1,0 +1,992 @@
+{
+  "captured_at": "2026-11-02T18:08:34.8647971+10:00",
+  "project_root": "C:\\Users\\angelo\\Desktop\\ВВГУ — Хроники Кампуса",
+  "engine_version": "4.7.2.stable.official.ed1daf0bf",
+  "verification_mode": "Godot headless script checks; visual screenshots are documented separately",
+  "map_count": 12,
+  "transition_zone_count": 25,
+  "npc_placement_count": 83,
+  "npc_walking_placement_count": 6,
+  "character_sheet_count": 16,
+  "tile_catalog_entry_count": 166,
+  "tile_static_entry_count": 136,
+  "animation_loop_count": 10,
+  "animation_strip_count": 5,
+  "maps": [
+    {
+      "id": "entrance",
+      "title": "Главный вход и гардероб, 1 этаж",
+      "size": [
+        27,
+        16
+      ],
+      "npc_count": 8,
+      "walkers": 1,
+      "exits": 2
+    },
+    {
+      "id": "corridor_1",
+      "title": "Коридор первого этажа",
+      "size": [
+        15,
+        24
+      ],
+      "npc_count": 3,
+      "walkers": 1,
+      "exits": 8
+    },
+    {
+      "id": "corridor_4",
+      "title": "Коридор 4 этажа",
+      "size": [
+        44,
+        3
+      ],
+      "npc_count": 5,
+      "walkers": 1,
+      "exits": 3
+    },
+    {
+      "id": "class_1421",
+      "title": "Компьютерный класс 1421",
+      "size": [
+        12,
+        10
+      ],
+      "npc_count": 10,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "winter_garden",
+      "title": "Зимний сад, верхний уровень",
+      "size": [
+        56,
+        38
+      ],
+      "npc_count": 15,
+      "walkers": 3,
+      "exits": 3
+    },
+    {
+      "id": "winter_garden_lower",
+      "title": "Зимний сад, нижний уровень",
+      "size": [
+        56,
+        38
+      ],
+      "npc_count": 10,
+      "walkers": 0,
+      "exits": 2
+    },
+    {
+      "id": "class_1_a",
+      "title": "Аудитория 1103",
+      "size": [
+        12,
+        10
+      ],
+      "npc_count": 10,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "class_1_b",
+      "title": "Аудитория 1102",
+      "size": [
+        12,
+        10
+      ],
+      "npc_count": 10,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "class_1_c",
+      "title": "Аудитория 1101",
+      "size": [
+        12,
+        10
+      ],
+      "npc_count": 10,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "toilet_m",
+      "title": "Мужской туалет",
+      "size": [
+        6,
+        8
+      ],
+      "npc_count": 0,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "toilet_f",
+      "title": "Женский туалет",
+      "size": [
+        6,
+        8
+      ],
+      "npc_count": 0,
+      "walkers": 0,
+      "exits": 1
+    },
+    {
+      "id": "lounge_1",
+      "title": "Зона отдыха",
+      "size": [
+        8,
+        8
+      ],
+      "npc_count": 2,
+      "walkers": 0,
+      "exits": 1
+    }
+  ],
+  "transitions": [
+    {
+      "from": "entrance",
+      "to": "corridor_4",
+      "rect": [
+        22,
+        4,
+        5,
+        1
+      ],
+      "spawn": [
+        40,
+        1
+      ],
+      "label": "Подняться на 4 этаж",
+      "contextual_return": false
+    },
+    {
+      "from": "entrance",
+      "to": "corridor_1",
+      "rect": [
+        3,
+        4,
+        1.5,
+        1.5
+      ],
+      "spawn": [
+        6,
+        22
+      ],
+      "label": "Пройти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "entrance",
+      "rect": [
+        5,
+        23,
+        3,
+        1
+      ],
+      "spawn": [
+        3,
+        5
+      ],
+      "label": "Вернуться к гардеробу",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "class_1_a",
+      "rect": [
+        4.7,
+        3,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        6,
+        8
+      ],
+      "label": "Войти: Аудитория 1103",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "class_1_b",
+      "rect": [
+        4.7,
+        10,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        6,
+        8
+      ],
+      "label": "Войти: Аудитория 1102",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "class_1_c",
+      "rect": [
+        4.7,
+        17,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        6,
+        8
+      ],
+      "label": "Войти: Аудитория 1101",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "toilet_m",
+      "rect": [
+        8.7,
+        8,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        2,
+        6
+      ],
+      "label": "Войти: Мужской туалет",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "toilet_f",
+      "rect": [
+        8.7,
+        12,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        2,
+        6
+      ],
+      "label": "Войти: Женский туалет",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "lounge_1",
+      "rect": [
+        8.7,
+        17,
+        1.0,
+        1.0
+      ],
+      "spawn": [
+        3,
+        6
+      ],
+      "label": "Войти: Зона отдыха",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_1",
+      "to": "winter_garden",
+      "rect": [
+        11,
+        1,
+        1,
+        3
+      ],
+      "spawn": [
+        54,
+        23
+      ],
+      "label": "По лестнице №2 в зимний сад",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_4",
+      "to": "winter_garden",
+      "rect": [
+        3,
+        0,
+        1,
+        3
+      ],
+      "spawn": [
+        54,
+        23
+      ],
+      "label": "Перейти в галерею зимнего сада",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_4",
+      "to": "class_1421",
+      "rect": [
+        23,
+        0,
+        1,
+        0.5
+      ],
+      "spawn": [
+        6,
+        8
+      ],
+      "label": "Войти в аудиторию 1421",
+      "contextual_return": false
+    },
+    {
+      "from": "corridor_4",
+      "to": "entrance",
+      "rect": [
+        40,
+        1,
+        1,
+        2
+      ],
+      "spawn": [
+        24,
+        5
+      ],
+      "label": "Спуститься к главному входу",
+      "contextual_return": false
+    },
+    {
+      "from": "class_1421",
+      "to": "corridor_4",
+      "rect": [
+        5,
+        9,
+        2,
+        1
+      ],
+      "spawn": [
+        23,
+        1
+      ],
+      "label": "Подняться на 4 этаж",
+      "contextual_return": false
+    },
+    {
+      "from": "winter_garden",
+      "to": "winter_garden_lower",
+      "rect": [
+        31,
+        18,
+        1,
+        2
+      ],
+      "spawn": [
+        36,
+        18
+      ],
+      "label": "Спуститься к кафе",
+      "contextual_return": false
+    },
+    {
+      "from": "winter_garden",
+      "to": "winter_garden_lower",
+      "rect": [
+        40,
+        15,
+        2,
+        1
+      ],
+      "spawn": [
+        41,
+        20
+      ],
+      "label": "Спуститься к кафе",
+      "contextual_return": false
+    },
+    {
+      "from": "winter_garden",
+      "to": "corridor_4",
+      "rect": [
+        54,
+        22,
+        2,
+        3
+      ],
+      "spawn": [
+        4,
+        1
+      ],
+      "label": "Вернуться в коридор 4 этажа",
+      "contextual_return": true
+    },
+    {
+      "from": "winter_garden_lower",
+      "to": "winter_garden",
+      "rect": [
+        35,
+        18,
+        1,
+        2
+      ],
+      "spawn": [
+        30,
+        18
+      ],
+      "label": "Подняться в галерею",
+      "contextual_return": false
+    },
+    {
+      "from": "winter_garden_lower",
+      "to": "winter_garden",
+      "rect": [
+        40,
+        19,
+        2,
+        1
+      ],
+      "spawn": [
+        41,
+        14
+      ],
+      "label": "Подняться в галерею",
+      "contextual_return": false
+    },
+    {
+      "from": "class_1_a",
+      "to": "corridor_1",
+      "rect": [
+        5,
+        9,
+        2,
+        1
+      ],
+      "spawn": [
+        5,
+        3
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "class_1_b",
+      "to": "corridor_1",
+      "rect": [
+        5,
+        9,
+        2,
+        1
+      ],
+      "spawn": [
+        5,
+        10
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "class_1_c",
+      "to": "corridor_1",
+      "rect": [
+        5,
+        9,
+        2,
+        1
+      ],
+      "spawn": [
+        5,
+        17
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "toilet_m",
+      "to": "corridor_1",
+      "rect": [
+        2,
+        7,
+        2,
+        1
+      ],
+      "spawn": [
+        9,
+        8
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "toilet_f",
+      "to": "corridor_1",
+      "rect": [
+        2,
+        7,
+        2,
+        1
+      ],
+      "spawn": [
+        9,
+        12
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    },
+    {
+      "from": "lounge_1",
+      "to": "corridor_1",
+      "rect": [
+        3,
+        7,
+        2,
+        1
+      ],
+      "spawn": [
+        9,
+        17
+      ],
+      "label": "Выйти в коридор 1 этажа",
+      "contextual_return": false
+    }
+  ],
+  "tests": [
+    {
+      "name": "check_fight_club",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "PASS fight: toilet scope, intro, movement, opponent attack/dodge, input, aim, cooldown, victory, exit, defeat and respawn",
+      "log": "check_fight_club.log"
+    },
+    {
+      "name": "check_navigation_texts",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "PASS navigation: all map labels, classroom signs on both floors, winter garden name in HUD/dialogue/data",
+      "log": "check_navigation_texts.log"
+    },
+    {
+      "name": "check_day_quests",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "PASS day: 6 quest orders, payments, clock/deadline, pause/dialogue, E at ATM, teacher waiting, task HUD, new run",
+      "log": "check_day_quests.log"
+    },
+    {
+      "name": "check_people_update",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "PASS update: menu, 8-way hero, 16 aquarium frames, gates, people, dialogue, NPC paths",
+      "log": "check_people_update.log"
+    },
+    {
+      "name": "check_route",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "PASS route: 12 maps, 25 transitions, all landing points reachable",
+      "log": "check_route.log"
+    },
+    {
+      "name": "check_arch_atm",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "ARCH / ATM FAILURES: 0",
+      "log": "check_arch_atm.log"
+    },
+    {
+      "name": "check_doorway_visuals",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "VISUAL STRUCTURE FAILURES: 0",
+      "log": "check_doorway_visuals.log"
+    },
+    {
+      "name": "check_rooms",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "ROOM FAILURES: 0",
+      "log": "check_rooms.log"
+    },
+    {
+      "name": "check_corridor",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "CORRIDOR FAILURES: 0",
+      "log": "check_corridor.log"
+    },
+    {
+      "name": "check_fixes",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "REGRESSIONS: 0",
+      "log": "check_fixes.log"
+    },
+    {
+      "name": "check_stair_return",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "STAIR RETURN FAILURES: 0",
+      "log": "check_stair_return.log"
+    }
+  ],
+  "runtime_files_sha256": [
+    {
+      "path": "game/scripts/arch_visual.gd",
+      "sha256": "0DC6078CF533C39CEB2B5D78CF7408E32A57BD1944D4983729F2A109B50DFEEB"
+    },
+    {
+      "path": "game/scripts/atm_visual.gd",
+      "sha256": "0007BEC8B800596A0B5D0EFFB6E971F0EB68DCF6C42E5F144E3D2E0321BC0EF9"
+    },
+    {
+      "path": "game/scripts/campus_day.gd",
+      "sha256": "2AFB8E9C57665594271DB982CA770CB2A848883718927D4887CD12405DE8D661"
+    },
+    {
+      "path": "game/scripts/campus_dialogue.gd",
+      "sha256": "31760747B43AE8211B30BF7E435AAE03BE90C3910D2CDA1D2462AD6727DFEF7B"
+    },
+    {
+      "path": "game/scripts/campus_people.gd",
+      "sha256": "702C32C12529B9F6E9DE05C4237E7C7DF7A0A696EA04697B366745536FED81E4"
+    },
+    {
+      "path": "game/scripts/character_visual.gd",
+      "sha256": "D9DD3062682E0A325E67FAD8E0B56F67B883D05FF3DE89EC341B33BA163569BF"
+    },
+    {
+      "path": "game/scripts/corridor.gd",
+      "sha256": "1502EE40F2F399F9B3B72E5120638E4716E25EC065EB05460DA2B20F091E1CD1"
+    },
+    {
+      "path": "game/scripts/dialog_box.gd",
+      "sha256": "B73AC613A460C78458E6C51F8A9C66B07E7939E2A40C14FE6C554850C4BC3214"
+    },
+    {
+      "path": "game/scripts/door_visual.gd",
+      "sha256": "7476B9B149E0A0919F3C1D45A168EE7F901696C89AC30FC83CE220757AB48047"
+    },
+    {
+      "path": "game/scripts/environment_animation.gd",
+      "sha256": "3373E5B0A6A1979056766198208B9B8D16823B4CD735295E6E9DA582CED1677A"
+    },
+    {
+      "path": "game/scripts/fight_club.gd",
+      "sha256": "7FD245582439ECF00980BFD8A58BFCF5EAC7088FABA746E744FCC91FE12238DA"
+    },
+    {
+      "path": "game/scripts/fixture_visual.gd",
+      "sha256": "812067EDD8295E070C91E3DAF1A900843452DEF5E295777954031A624A2C7D7E"
+    },
+    {
+      "path": "game/scripts/level.gd",
+      "sha256": "744725C2BF5BEF34979FA359BC5C57BA8AAD57BEB0391A45E76AFF9A89AB1912"
+    },
+    {
+      "path": "game/scripts/menu.gd",
+      "sha256": "E6DDEC7439F31794489E2588F79E601953D877648DB21BFA629BC161A8302988"
+    },
+    {
+      "path": "game/scripts/person.gd",
+      "sha256": "2B938C5831E2459C032087DAF4B531D5812A6D609F6221B8246E22DECFE2F064"
+    },
+    {
+      "path": "game/scripts/player.gd",
+      "sha256": "C58B063110223E54576803D89C50099CE219C57AA2F84209FD49FD22C1D2E21E"
+    },
+    {
+      "path": "game/scripts/quest_tracker.gd",
+      "sha256": "7073A25A62CFAD7AD524B6EC913F10F7845CD46757E9933A46DB80937B9253EB"
+    },
+    {
+      "path": "game/scripts/route_map.gd",
+      "sha256": "F091BB927C41BE7170A7D6D034C801B56BF88A94F92063895D78EDD8D9AC94D0"
+    },
+    {
+      "path": "game/scripts/tyler_visual.gd",
+      "sha256": "C648B3F841F403DEDD208B2BE9C6CAACDD64CF6AD8F08DAA9E65F8C87709B34A"
+    },
+    {
+      "path": "game/scripts/ui_kit.gd",
+      "sha256": "9B70EAAD5AA28C6A5DE843EB5D754E68E750F64140CE87D5E2EAE17F24477633"
+    },
+    {
+      "path": "game/scripts/walk_visual.gd",
+      "sha256": "5FC17AD4E96147A0CFD96926ECBC5D4520A5A20119FEDAE2CD4ECB83D8DCFC96"
+    },
+    {
+      "path": "game/scenes/corridor.tscn",
+      "sha256": "C7EA7BBE304A4DB52213B5A8BFD9C449E76F29B6246902654BE6A60F9811FBA3"
+    },
+    {
+      "path": "game/scenes/main.tscn",
+      "sha256": "31DE52B3B04B3E8C2C6895E1A983909D23C5DC9C360C09A8005139CB72AABAA8"
+    },
+    {
+      "path": "game/scenes/menu.tscn",
+      "sha256": "3A3F34681890FC58E805DFBDFEC18F50D3A99FDCE871C09B4E857E11CBC1F452"
+    },
+    {
+      "path": "game/maps/anim.json",
+      "sha256": "03EF6F8835CD284691EFE2B905DE956198253D80B0B0D027A6CF31A9D2180612"
+    },
+    {
+      "path": "game/maps/characters.json",
+      "sha256": "72187BF6A18F32A67E9A6189BB6523FA8A4B7FE4D845B03B1D193505F2BBBDC5"
+    },
+    {
+      "path": "game/maps/class_1_a.json",
+      "sha256": "8E8F396A1E4B2F9DE82087835AAE081291D96E45049D0C59BB30843F7D9D626B"
+    },
+    {
+      "path": "game/maps/class_1_b.json",
+      "sha256": "35299E2127E754C24A7F5E05D49A5C1D59848B961CF9E1AB73B961C92C0CFCAB"
+    },
+    {
+      "path": "game/maps/class_1_c.json",
+      "sha256": "5CEEEA97F8CAEBA869021BEAD3F6E11DD2D85096E85BCAEDEA162FFD0B23CE24"
+    },
+    {
+      "path": "game/maps/class_1421.json",
+      "sha256": "F468A87066FD533457EC1308DDE9CDEF0FE1609568D59D3617F786FA2C1AB9B7"
+    },
+    {
+      "path": "game/maps/corridor_1.json",
+      "sha256": "38F2B6A35F02914D65D1B789E14B1E094CC9212996F8A48A02F8993222FC11D6"
+    },
+    {
+      "path": "game/maps/corridor_4.json",
+      "sha256": "4462AF7088ECA26C74A8155E43A416E9FE02D052995FA12836B7BE68E98C7946"
+    },
+    {
+      "path": "game/maps/entrance.json",
+      "sha256": "0EC5846234C5800DF9E93611E73957D9189BF51D77E88107893A8D5E9C8AE1B1"
+    },
+    {
+      "path": "game/maps/legend.json",
+      "sha256": "C4433A936C0F8F69CA80B351052AA55A40C742AC1DC6FF8C3FA0EF4121D37167"
+    },
+    {
+      "path": "game/maps/lounge_1.json",
+      "sha256": "E74E9CA8071B98EB8AD6875B73F166401892A6FE5767B1A7D7A765F1D067AA6C"
+    },
+    {
+      "path": "game/maps/npc_lines.json",
+      "sha256": "8646802F285955B7925F5182A97715E2B5B10346B1B44E6BCC9C0A6EB32A17B0"
+    },
+    {
+      "path": "game/maps/npcs_example.json",
+      "sha256": "34A443F230D024A60786E49077A755F6B75BEDFA07F578C0EF550C6830B2A7EF"
+    },
+    {
+      "path": "game/maps/tiles.json",
+      "sha256": "75F83ADF25902F320C71B6E1497A332E320E958806AAA7A635056D9B65C0805A"
+    },
+    {
+      "path": "game/maps/toilet_f.json",
+      "sha256": "6F293B9F9E98299EEB61FD43E1C7C68ABD4E99676724FE3B43B6A63FB6560F21"
+    },
+    {
+      "path": "game/maps/toilet_m.json",
+      "sha256": "FB7A7E94BB1D680750039512B6F2FC7AC40D51EB91888DD8DC409A66F56F7E94"
+    },
+    {
+      "path": "game/maps/winter_garden_lower.json",
+      "sha256": "343CA6BED58AAD3F359070D97A4624C27EF8A738F2372F5F38F094B6D0240D4B"
+    },
+    {
+      "path": "game/maps/winter_garden.json",
+      "sha256": "38424733808B3B94DC1CBF0AAE354C832C291B3F4740D280FCE07D7A52CF74F1"
+    },
+    {
+      "path": "game/assets/characters/barista.png",
+      "sha256": "D7042EA658C4E22F55C10DC2B07E19A49B0913BBBD4A9CB5C3D2CBBDCA4423C4"
+    },
+    {
+      "path": "game/assets/characters/cook.png",
+      "sha256": "E54C154856165702D72A6FEDBF3BF2BC6C379E5196F47D59FD4169CEC34D4865"
+    },
+    {
+      "path": "game/assets/characters/guard.png",
+      "sha256": "326697809C7119D6DD3847A6EE4A90E16DA63E2AE7E1A9F6D8E96CC358DAE3D6"
+    },
+    {
+      "path": "game/assets/characters/hero.png",
+      "sha256": "E2BD3059E07A7D297DB44E1A9C7688A05F5AB6C8218826199B769F5730266C56"
+    },
+    {
+      "path": "game/assets/characters/mentor.png",
+      "sha256": "112451EB1EEA6499E8111B40A25E871B5ABEBF4E92B03558FA3A3FD9257D376C"
+    },
+    {
+      "path": "game/assets/characters/student_1.png",
+      "sha256": "CB4A726A1B66682619AC09B18657F4B1C15A6358421E8FF307D6F124BAD20596"
+    },
+    {
+      "path": "game/assets/characters/student_2.png",
+      "sha256": "202DFF779195A3A0531211664C7D98B26E0EAE01C65E735C1F0C6F90640FEEFC"
+    },
+    {
+      "path": "game/assets/characters/student_3.png",
+      "sha256": "1E5024179A2276D092316933079CD5E0D0AC9215603BE58A9D34E56304006086"
+    },
+    {
+      "path": "game/assets/characters/student_4.png",
+      "sha256": "5BB919C970199E8B21E9EEB985214598932D172FFF0F0E9BF976AD25503B1D48"
+    },
+    {
+      "path": "game/assets/characters/student_5.png",
+      "sha256": "43FB8400AD062C2CF45735192D2E3AF2EE53C4EBA8E023017B5B3B71C893BB8A"
+    },
+    {
+      "path": "game/assets/characters/student_6.png",
+      "sha256": "C0737036400F727450EA6896E8E2ED5B1F3B46E32F1DFF588465E0B158E37A7D"
+    },
+    {
+      "path": "game/assets/characters/student_7.png",
+      "sha256": "EC729D78BCB1B30C0A3A3AD0CE7C2923DA0CFDD8C05F2D59E875E8A3D48BF0C3"
+    },
+    {
+      "path": "game/assets/characters/student_8.png",
+      "sha256": "EEE5311E3099DBD521B25FAB6F8FE9659DA7B233358C65FCBBE5E7CB44292429"
+    },
+    {
+      "path": "game/assets/characters/teacher_f.png",
+      "sha256": "F0FEF98A9B3BAFEE3DEC38D89B0EA0B1CC0F11967E781AC3AF00F60CF080058A"
+    },
+    {
+      "path": "game/assets/characters/teacher_m.png",
+      "sha256": "36DD835C5D5BE821C9EB3CFC12CACFA6EB016F71994275553D48E10E27A79519"
+    },
+    {
+      "path": "game/assets/characters/wardrobe.png",
+      "sha256": "7030F994EC0B916EB521A17242F41B1315FE583392A31C19C5335814E7B68BEA"
+    },
+    {
+      "path": "game/assets/hero_temp.png",
+      "sha256": "59FB67792624CA5870169A96107ADF655FA91A7A6F60775B739B653FFA0D91B0"
+    },
+    {
+      "path": "game/assets/portraits/barista_normal.png",
+      "sha256": "E5FE66D04EBC08E2AFD8E6C13237BAA2A9E208D5FD5E00FDB6860ED60B18FB53"
+    },
+    {
+      "path": "game/assets/portraits/barista_smile.png",
+      "sha256": "A53646B321D16B1605A5E7DB948B4335D3C9D45C28377B537A5F32D1B8C14886"
+    },
+    {
+      "path": "game/assets/portraits/cook_normal.png",
+      "sha256": "AC9035F5C47780D1F1EE104764D2871CD0E7ADE957462118493C515D7F2D860F"
+    },
+    {
+      "path": "game/assets/portraits/cook_smile.png",
+      "sha256": "FA7A2C2D68D36C3D33E839302189101B33CC047B79AB53CDA91FAF78DE08D008"
+    },
+    {
+      "path": "game/assets/portraits/guard_normal.png",
+      "sha256": "2963B65CEAA3CF99753BBE756E191367B1B4025487B3585699A830B7E64E3D27"
+    },
+    {
+      "path": "game/assets/portraits/guard_smile.png",
+      "sha256": "ECA8B0864C0404832C4B42F7CB901DEE9E89A3EE87641A9A4A760926DEB209CF"
+    },
+    {
+      "path": "game/assets/portraits/hero_normal.png",
+      "sha256": "BCD43AD4A9D96F4708C7036261C4737B68ADACAEC3CD5289D39A9784675315E8"
+    },
+    {
+      "path": "game/assets/portraits/hero_smile.png",
+      "sha256": "CFDAD3BB5811FCFDAB93E201B5A4D834E9A12AD4F6D2E684E1C44E56FA67F70E"
+    },
+    {
+      "path": "game/assets/portraits/mentor_normal.png",
+      "sha256": "00664BE12E0179A0971AF615EA3F5477F02086212A0AA6266104AE883C3D39B7"
+    },
+    {
+      "path": "game/assets/portraits/mentor_smile.png",
+      "sha256": "B01F3F952BDBAE83B79381F9174E801F6B4086ECDAB569E51C9B7A1CDF73D708"
+    },
+    {
+      "path": "game/assets/portraits/teacher_f_normal.png",
+      "sha256": "B7C018D1100BB45E363F195D7C0B65BFEC04EFED00E39C47D3835C51CE937BC0"
+    },
+    {
+      "path": "game/assets/portraits/teacher_f_smile.png",
+      "sha256": "52306776C8D72DC1B65ABFA25CA542BF8B070D2AF6EE15F3AB0C1C5A4F0EB129"
+    },
+    {
+      "path": "game/assets/portraits/teacher_m_normal.png",
+      "sha256": "296FB500860B4A5CACA18DA7C1C3B2EBC20A533A9327C6DEE4310B723C99EA21"
+    },
+    {
+      "path": "game/assets/portraits/teacher_m_smile.png",
+      "sha256": "493A80A3901339E0A478D4A7649C8239B9A809AB831341FC0732DF2F92001500"
+    },
+    {
+      "path": "game/assets/portraits/wardrobe_normal.png",
+      "sha256": "D179992D0DEA80944BDD92D8581799B71A35464D25012D29596278CBBABCD1B2"
+    },
+    {
+      "path": "game/assets/portraits/wardrobe_smile.png",
+      "sha256": "D73F818B22F7420DA402C38231B2FA1FDE8410494B798E834FACE5CEC19345AB"
+    },
+    {
+      "path": "game/assets/tileset_64x32.png",
+      "sha256": "EB653F834888F5B1888EC4FB3D9DCC1855A72018B958C8608E478C462D840028"
+    },
+    {
+      "path": "game/assets/tileset_anim_64x32.png",
+      "sha256": "5F030AE785518EF6B08E97D779C19E13D8C2C87EA389BF8EEA934390AB0101BD"
+    },
+    {
+      "path": "game/assets/ui/button_hover.png",
+      "sha256": "284C556A765C47E11E3188BF5838A6A7EE3059E470614416DEF013685278D611"
+    },
+    {
+      "path": "game/assets/ui/button_normal.png",
+      "sha256": "6AB01A36EBA9803E9C1EBA051CD28191570A8EA019198A75B77FBCEA6F37DDCF"
+    },
+    {
+      "path": "game/assets/ui/button_pressed.png",
+      "sha256": "4778FC8EFC4A8D75EE054CC7F674FFCA7CE7914F4D0FE1FBF7D7216AD44CD082"
+    },
+    {
+      "path": "game/assets/ui/choice_hover.png",
+      "sha256": "AEA81F2B545462C8F795D739D3084DAD2E3CA420E563062F88960491BFEE5803"
+    },
+    {
+      "path": "game/assets/ui/choice_normal.png",
+      "sha256": "D89D7CCA7B23FCC4AAB25563D1E62555CFDB0E4BDFD405916404D5499B37A7A2"
+    },
+    {
+      "path": "game/assets/ui/dialog_panel.png",
+      "sha256": "67DC58D5F4A53E47F25D90F42F450CB21DC3A32E199F1E3A805515347488605B"
+    },
+    {
+      "path": "game/assets/ui/logo.png",
+      "sha256": "28E5C389C571389C0B4106EA32F34B4D5B42D881B109670EB0E8F7A1A86F1462"
+    },
+    {
+      "path": "game/assets/ui/menu_bg.png",
+      "sha256": "A1698E9A84AAC072DDC483594F6E567E55A97122625A8CB5D89F1C7F94860E2F"
+    },
+    {
+      "path": "game/assets/ui/name_plate.png",
+      "sha256": "307986E743F545AC7B6F5BEBF22BB404A2A5B457A9313931EA6DB421559A075A"
+    },
+    {
+      "path": "game/assets/ui/next_arrow.png",
+      "sha256": "B36979D30ABDEFD294327D92E08F3EF56AF8989EBFFAEEFAF5FCEDA4CAACDBCB"
+    },
+    {
+      "path": "game/assets/ui/portrait_frame.png",
+      "sha256": "4D116C977FF1C5962F3D82E83EE43CE25B9732864C246AFB2D9163D8F2371C21"
+    },
+    {
+      "path": "game/project.godot",
+      "sha256": "C367F686B7D763AF611072FA78D01E72012786BB2285CDE950720E8B7D80D63D"
+    },
+    {
+      "path": "game/tileset.tres",
+      "sha256": "4A39C301ED3478C7228CFE04CC703812309B4CCBDF992C5277B5BC0B6D5EB9C0"
+    }
+  ]
+}
