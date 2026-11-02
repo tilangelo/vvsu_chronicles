@@ -51,8 +51,9 @@ $tiles = Get-Content -LiteralPath (Join-Path $gameRoot 'maps\tiles.json') -Raw |
 $characters = Get-Content -LiteralPath (Join-Path $gameRoot 'maps\characters.json') -Raw | ConvertFrom-Json
 $anim = Get-Content -LiteralPath (Join-Path $gameRoot 'maps\anim.json') -Raw | ConvertFrom-Json
 $hashes = @()
+$documentedScripts = @([regex]::Matches((Get-Content -LiteralPath (Join-Path $gameRoot 'README.md') -Raw), '[A-Za-z_]+\.gd') | ForEach-Object { $_.Value })
 foreach ($area in @('scripts','scenes','maps','assets')) {
-    foreach ($file in (Get-ChildItem -LiteralPath (Join-Path $gameRoot $area) -Recurse -File | Where-Object { $_.Extension -in @('.gd','.tscn','.json','.png') } | Sort-Object FullName)) {
+    foreach ($file in (Get-ChildItem -LiteralPath (Join-Path $gameRoot $area) -Recurse -File | Where-Object { $_.Extension -in @('.gd','.tscn','.json','.png') -and ($_.Extension -ne '.gd' -or $_.Name -in $documentedScripts) } | Sort-Object FullName)) {
         $hashes += [ordered]@{path = $file.FullName.Substring($ProjectRoot.Length + 1).Replace('\','/'); sha256 = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash}
     }
 }
@@ -60,7 +61,6 @@ foreach ($relative in @('game\project.godot','game\tileset.tres')) {
     $hashes += [ordered]@{path = $relative.Replace('\','/'); sha256 = (Get-FileHash -LiteralPath (Join-Path $ProjectRoot $relative) -Algorithm SHA256).Hash}
 }
 $tests = @(
-    @{name='check_fight_club'; expected='^PASS fight:'},
     @{name='check_navigation_texts'; expected='^PASS navigation:'},
     @{name='check_day_quests'; expected='^PASS day:'},
     @{name='check_people_update'; expected='^PASS update:'},

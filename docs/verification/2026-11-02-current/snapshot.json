@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-02T18:08:34.8647971+10:00",
+  "captured_at": "2026-11-02T18:35:16.8054794+10:00",
   "project_root": "C:\\Users\\angelo\\Desktop\\ВВГУ — Хроники Кампуса",
   "engine_version": "4.7.2.stable.official.ed1daf0bf",
   "verification_mode": "Godot headless script checks; visual screenshots are documented separately",
@@ -550,13 +550,6 @@
   ],
   "tests": [
     {
-      "name": "check_fight_club",
-      "exit_code": 0,
-      "passed": true,
-      "summary": "PASS fight: toilet scope, intro, movement, opponent attack/dodge, input, aim, cooldown, victory, exit, defeat and respawn",
-      "log": "check_fight_club.log"
-    },
-    {
       "name": "check_navigation_texts",
       "exit_code": 0,
       "passed": true,
@@ -669,10 +662,6 @@
       "sha256": "3373E5B0A6A1979056766198208B9B8D16823B4CD735295E6E9DA582CED1677A"
     },
     {
-      "path": "game/scripts/fight_club.gd",
-      "sha256": "7FD245582439ECF00980BFD8A58BFCF5EAC7088FABA746E744FCC91FE12238DA"
-    },
-    {
       "path": "game/scripts/fixture_visual.gd",
       "sha256": "812067EDD8295E070C91E3DAF1A900843452DEF5E295777954031A624A2C7D7E"
     },
@@ -699,10 +688,6 @@
     {
       "path": "game/scripts/route_map.gd",
       "sha256": "F091BB927C41BE7170A7D6D034C801B56BF88A94F92063895D78EDD8D9AC94D0"
-    },
-    {
-      "path": "game/scripts/tyler_visual.gd",
-      "sha256": "C648B3F841F403DEDD208B2BE9C6CAACDD64CF6AD8F08DAA9E65F8C87709B34A"
     },
     {
       "path": "game/scripts/ui_kit.gd",

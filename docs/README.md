@@ -20,13 +20,13 @@
 | [../game/README.md](../game/README.md) | Активные модули и ресурсы Godot |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Граф карты, поток выполнения, данные и алгоритмы |
 | [FEATURES.md](FEATURES.md) | Матрица функций: результат, подтверждение, ограничения |
-| [VALIDATION.md](VALIDATION.md) | Покрытие одиннадцати проверок и ручная приёмка |
+| [VALIDATION.md](VALIDATION.md) | Покрытие десяти проверок и ручная приёмка |
 | [REPORT_GUIDE.md](REPORT_GUIDE.md) | Фактическая основа и структура будущего отчёта |
 | [../assets/README.md](../assets/README.md) | Реестр исходных материалов, авторство и статус |
 | [../assets/maps/README.md](../assets/maps/README.md) | Использование ранних рисунков первого этажа |
 | [../game/assets/README.md](../game/assets/README.md) | Форматы активных графических ресурсов |
 | [screenshots/README.md](screenshots/README.md) | Какие кадры использовать и что они доказывают |
-| [verification/2026-11-02-fight-club/snapshot.json](verification/2026-11-02-fight-club/snapshot.json) | Показатели, результаты, переходы и SHA-256 runtime-файлов |
+| [verification/2026-11-02-current/snapshot.json](verification/2026-11-02-current/snapshot.json) | Показатели, результаты, переходы и SHA-256 runtime-файлов |
 | [collect_evidence.ps1](collect_evidence.ps1) | Повторяемый сбор показателей и журналов |
 
 ## Исходные и исторические документы
@@ -48,5 +48,4 @@
 При изменении логики обновлять GDD, FEATURES, ARCHITECTURE и CONTEXT по затронутым пунктам; при изменении среды — SETUP. После существенных изменений заново собрать evidence в новый каталог, подписать новые скриншоты и сверить цифры. Не выдавать старый снимок проверок за проверку нового кода.
 
 В отчёте ссылаться на конкретный файл/функцию или журнал. Возраст снимка и его captured_at видны в JSON; у проверенных runtime-файлов есть хеши. Если нужны учебный шаблон, реквизиты, состав команды и объём отчёта, их следует получить отдельно — в проекте эти сведения не определены.
-
 
