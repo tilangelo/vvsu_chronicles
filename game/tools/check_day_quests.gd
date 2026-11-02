@@ -38,23 +38,23 @@ func run_checks():
 	for order in [["jacket","badge","class"],["jacket","class","badge"],["badge","jacket","class"],["badge","class","jacket"],["class","jacket","badge"],["class","badge","jacket"]]:
 		var day = CampusDay.new()
 		check(day.clock_text() == "12:40" and day.money == 500, "Wrong start time or wallet")
-		day.act("pay_badge","ander")
+		day.act("pay_badge","winter_garden")
 		check(not day.badge_paid and day.money == 500, "Payment allowed before mentor")
 		for task in order:
 			match task:
 				"jacket": day.act("store_jacket","entrance")
 				"badge":
 					day.act("badge_info","corridor_1")
-					day.act("pay_badge","ander")
+					day.act("pay_badge","winter_garden")
 				"class": day.act("wait_class","class_1421")
 		check(day.jacket_stored and day.badge_paid and day.class_attended and not day.class_late, "Order failed: " + str(order))
-		day.act("pay_badge","ander")
+		day.act("pay_badge","winter_garden")
 		check(day.money == 350, "Repeated payment charged again")
 		check(day.tasks("entrance").all(func(task): return task["done"]), "Completed tasks lost")
 	var late = CampusDay.new()
 	late.check_attendance("class_1421")
 	check(not late.class_attended, "Early room entry completes class immediately")
-	late.advance(301.0,"ander")
+	late.advance(301.0,"winter_garden")
 	check(not late.class_attended, "Outside classroom attendance counted")
 	late.check_attendance("class_1421")
 	check(late.class_attended and late.class_late, "Late arrival not recorded")
@@ -65,7 +65,7 @@ func run_checks():
 	var poor = CampusDay.new()
 	poor.mentor_met = true
 	poor.money = 100
-	poor.act("pay_badge","ander")
+	poor.act("pay_badge","winter_garden")
 	check(not poor.badge_paid and poor.money == 100, "Failed payment changed wallet or quest")
 	var game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
@@ -92,7 +92,7 @@ func run_checks():
 	talk_to(game,"mentor")
 	check(game.day.mentor_met and "150" in game.dialog.text_label.text, "Mentor did not unlock/explain badge")
 	game._close_dialog()
-	game.change_map("ander")
+	game.change_map("winter_garden")
 	game.hero_pos = Vector2(18.5,5.5)
 	game._place_hero()
 	game._update_portal_hint()

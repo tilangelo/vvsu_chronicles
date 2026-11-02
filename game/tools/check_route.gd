@@ -44,7 +44,7 @@ func _run() -> void:
 		scene.change_map(id)
 		var contacts: Array[String] = []
 		if id == "entrance": contacts = ["wardrobe"]
-		if id in ["corridor_1", "ander"]: contacts.append("mentor")
+		if id in ["corridor_1", "winter_garden"]: contacts.append("mentor")
 		if id == "class_1421": contacts.append("teacher_m")
 		for who: String in contacts:
 			var accessible := false

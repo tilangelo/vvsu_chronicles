@@ -68,3 +68,4 @@ $godotExe = 'C:\Users\angelo\Desktop\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-
 Перед синхронизацией сравнивать изменения пользователя. Не переносить кэш `game/.godot/`. Резервные копии изменяемых файлов помещать в `backups/`; исходные пакеты `assets/` и презентацию `sources/` сохранять.
 
 Официальные страницы загрузок: [Godot](https://godotengine.org/download/archive/), [Git](https://git-scm.com/downloads), [VS Code](https://code.visualstudio.com/download), [LibreSprite](https://libresprite.github.io/). Версии сторонних инструментов здесь не закреплены и не проверялись.
+

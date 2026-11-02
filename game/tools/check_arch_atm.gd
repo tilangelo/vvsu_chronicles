@@ -8,7 +8,7 @@ func run_checks():
     var failures=0
     if not s.model.data.get('doors',[]).is_empty():failures+=1
     if s.level_root.find_child('Archway',true,false)==null:failures+=1
-    s.change_map('ander')
+    s.change_map('winter_garden')
     if s.level_root.find_child('ATM',true,false)==null:failures+=1
     if not s.model.blocked(Vector2(18.5,4.5)):failures+=1
     if s.model.data.get('atms',[]).size()!=1:failures+=1

@@ -10,7 +10,7 @@ func run_checks():
         s.return_targets.clear()
         s.change_map(id)
         s.hero_pos=Vector2(11.5,2.5) if id=='corridor_1' else Vector2(3.5,1.5)
-        if not s.use_exit() or s.model.data['id']!='ander':failures+=1
+        if not s.use_exit() or s.model.data['id']!='winter_garden':failures+=1
         s.hero_pos=Vector2(54.5,23.5)
         if not s.use_exit() or s.model.data['id']!=id:failures+=1
     print('STAIR RETURN FAILURES: ',failures)

@@ -21,8 +21,8 @@ const TITLES := {
 	"corridor_1": "Коридор · 1 этаж",
 	"corridor_4": "Компьютерные классы · 4 этаж",
 	"class_1421": "Аудитория 1421",
-	"ander": "Андер · галерея",
-	"ander_lower": "Андер · кафе и нижний уровень",
+	"winter_garden": "Зимний сад · галерея",
+	"winter_garden_lower": "Зимний сад · кафе и нижний уровень",
 }
 
 var model = RouteMap.new()
@@ -175,11 +175,11 @@ func change_map(id: String, spawn: Array = []) -> void:
 	location_label.text = TITLES.get(id, str(model.data.get("title", id)))
 	var directions := {
 		"entrance": "Проход слева от гардероба — 1 этаж; лестница справа — 4 этаж",
-		"corridor_1": "E у дверей — войти; лестница №2 справа в конце ведёт в андер",
-		"corridor_4": "Средняя дверь — аудитория 1421; левый конец коридора — андер",
+		"corridor_1": "E у дверей — войти; лестница №2 справа в конце ведёт в зимний сад",
+		"corridor_4": "Средняя дверь — аудитория 1421; левый конец коридора — зимний сад",
 		"class_1421": "Можно осмотреть класс и вернуться через входную дверь",
-		"ander": "Две лестницы у проёма ведут к кафе на нижнем уровне",
-		"ander_lower": "Осмотрите кафе; лестницы возвращают на галерею",
+		"winter_garden": "Две лестницы у проёма ведут к кафе на нижнем уровне",
+		"winter_garden_lower": "Осмотрите кафе; лестницы возвращают на галерею",
 	}
 	route_label.text = directions.get(id, "E у входной двери — вернуться в коридор")
 	exit_cooldown = 0.35
@@ -309,15 +309,34 @@ func _add_tiles(parent: Node2D, data: Dictionary) -> Node2D:
 		sign.add_theme_color_override("font_outline_color", Color("#182131"))
 		sign.add_theme_constant_override("outline_size", 5)
 		parent.add_child(sign)
-	if str(data.get("id", "")) == "corridor_1":
-		for marker: Dictionary in data.get("labels", []):
-			var label := Label.new()
-			label.text = str(marker["text"])
-			label.position = to_screen(Vector2(float(marker["x"]), float(marker["y"])))
-			label.add_theme_font_size_override("font_size", 13)
-			label.add_theme_color_override("font_color", Color("#263347"))
-			parent.add_child(label)
+	for marker: Dictionary in data.get("labels", []):
+		_add_map_sign(parent,marker)
 	return world
+
+
+func _add_map_sign(parent: Node2D, marker: Dictionary) -> void:
+	var sign := PanelContainer.new()
+	sign.name = "MapSign"
+	sign.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	sign.z_index = 20
+	var plate := StyleBoxFlat.new()
+	plate.bg_color = Color("#203b58")
+	plate.border_color = Color("#8ba9bf")
+	plate.set_border_width_all(1)
+	plate.content_margin_left = 7
+	plate.content_margin_right = 7
+	plate.content_margin_top = 3
+	plate.content_margin_bottom = 3
+	sign.add_theme_stylebox_override("panel",plate)
+	var label := Label.new()
+	label.text = str(marker["text"])
+	label.add_theme_font_size_override("font_size",14)
+	label.add_theme_color_override("font_color",Color("#f4f2ea"))
+	sign.add_child(label)
+	parent.add_child(sign)
+	sign.size = sign.get_combined_minimum_size()
+	var offset: Array = marker.get("offset",[0,-100])
+	sign.position = to_screen(Vector2(float(marker["x"]),float(marker["y"]))) + Vector2(float(offset[0]),float(offset[1])) - Vector2(sign.size.x/2.0,0)
 
 
 func _atlas(id: String) -> Vector2i:
@@ -394,10 +413,10 @@ func _on_dialog_choice(index: int) -> void:
 	conversation_phase = "answer"
 	var directions := {
 		"entrance":"Боковая арка слева от гардероба ведёт в коридор первого этажа. Лестница справа — на четвёртый этаж.",
-		"corridor_1":"У подписанной двери нажмите E. Лестница №2 справа в конце коридора ведёт в андер.",
-		"corridor_4":"Средняя дверь ведёт в класс 1421. В левом конце коридора — лестница к андеру.",
-		"ander":"Две лестницы у проёма ведут на нижний уровень, к кафе. Вернуться в коридор можно через вход в галерею.",
-		"ander_lower":"Обе лестницы ведут обратно на галерею. У лестницы нажмите E.",
+		"corridor_1":"У подписанной двери нажмите E. Лестница №2 справа в конце коридора ведёт в зимний сад.",
+		"corridor_4":"Средняя дверь ведёт в класс 1421. В левом конце коридора — лестница к зимнему саду.",
+		"winter_garden":"Две лестницы у проёма ведут на нижний уровень, к кафе. Вернуться в коридор можно через вход в галерею.",
+		"winter_garden_lower":"Обе лестницы ведут обратно на галерею. У лестницы нажмите E.",
 	}
 	var answer: String = str(directions.get(str(model.data["id"]),"У входной двери нажмите E, чтобы вернуться в коридор.")) if action == "directions" else dialogue_rules.answer(action,who,day,str(model.data["id"]))
 	dialog.show_line(who,answer,"smile")

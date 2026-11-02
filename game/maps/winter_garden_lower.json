@@ -1,6 +1,6 @@
 {
-  "id": "ander_lower",
-  "title": "Андер, нижний уровень",
+  "id": "winter_garden_lower",
+  "title": "Зимний сад, нижний уровень",
   "size": [
     56,
     38
@@ -673,7 +673,7 @@
         1,
         2
       ],
-      "to": "ander",
+      "to": "winter_garden",
       "spawn": [
         30,
         18
@@ -687,7 +687,7 @@
         2,
         1
       ],
-      "to": "ander",
+      "to": "winter_garden",
       "spawn": [
         41,
         14

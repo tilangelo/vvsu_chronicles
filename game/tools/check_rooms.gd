@@ -7,7 +7,7 @@ func run_checks():
     var failures=0
     var targets=[]
     for e in m.data['exits']:targets.append(e['to'])
-    for target in ['class_1_a','class_1_b','class_1_c','toilet_m','toilet_f','lounge_1','ander']:
+    for target in ['class_1_a','class_1_b','class_1_c','toilet_m','toilet_f','lounge_1','winter_garden']:
         if target not in targets:
             print('FAIL missing room/stair transition: ',target)
             failures+=1

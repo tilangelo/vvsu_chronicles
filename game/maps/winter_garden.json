@@ -1,12 +1,12 @@
 {
-  "id": "ander",
-  "title": "Андер, верхний уровень",
+  "id": "winter_garden",
+  "title": "Зимний сад, верхний уровень",
   "size": [
     56,
     38
   ],
   "floor": "floor_a",
-  "under": "ander_lower",
+  "under": "winter_garden_lower",
   "spawn": [
     54,
     23
@@ -2098,7 +2098,7 @@
         1,
         2
       ],
-      "to": "ander_lower",
+      "to": "winter_garden_lower",
       "spawn": [
         36,
         18
@@ -2112,7 +2112,7 @@
         2,
         1
       ],
-      "to": "ander_lower",
+      "to": "winter_garden_lower",
       "spawn": [
         41,
         20
@@ -2139,7 +2139,7 @@
     {
       "x": 28,
       "y": 10,
-      "text": "Андер"
+      "text": "Зимний сад"
     },
     {
       "x": 24,

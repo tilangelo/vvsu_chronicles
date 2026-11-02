@@ -1,5 +1,5 @@
 extends Control
-## Start screen: a picture of the ander, the logo and two buttons.
+## Start screen: a picture of the winter_garden, the logo and two buttons.
 
 const UiKit = preload("res://scripts/ui_kit.gd")
 const GAME_SCENE := "res://scenes/main.tscn"

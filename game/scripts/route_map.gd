@@ -1,7 +1,7 @@
 extends RefCounted
 ## Route data and collision rules shared by the playable scene and route checks.
 
-const MAP_IDS := ["entrance", "corridor_1", "corridor_4", "class_1421", "ander", "ander_lower", "class_1_a", "class_1_b", "class_1_c", "toilet_m", "toilet_f", "lounge_1"]
+const MAP_IDS := ["entrance", "corridor_1", "corridor_4", "class_1421", "winter_garden", "winter_garden_lower", "class_1_a", "class_1_b", "class_1_c", "toilet_m", "toilet_f", "lounge_1"]
 const WALL_MARGIN := 0.30
 const FOOT_RADIUS := 0.13
 
