@@ -1,0 +1,25 @@
+{
+  "texture": "res://assets/tileset_anim_64x32.png",
+  "source_id": 1,
+  "cell": [64, 160],
+  "texture_origin": [0, 64],
+  "loops": [
+    { "id": "aquarium_anim_0", "row": 0, "frames": 16, "fps": 8, "sort": -12, "replaces": "aquarium_x" },
+    { "id": "aquarium_anim_1", "row": 1, "frames": 16, "fps": 8, "sort": -12, "replaces": "aquarium_x" },
+    { "id": "aquarium_anim_2", "row": 2, "frames": 16, "fps": 8, "sort": -12, "replaces": "aquarium_x" },
+    { "id": "turnstile_anim", "row": 3, "frames": 2, "fps": 2, "sort": 6, "replaces": "turnstile_y" },
+    { "id": "turnstile_gate_anim", "row": 4, "frames": 2, "fps": 2, "sort": 6, "replaces": "turnstile_gate_y" },
+    { "id": "led_cut_anim", "row": 5, "frames": 8, "fps": 6, "sort": 6, "replaces": "led_cut" },
+    { "id": "kiosk_terminal_anim", "row": 6, "frames": 4, "fps": 1, "sort": 6, "replaces": "kiosk_terminal" },
+    { "id": "coffee_bar_machine_anim", "row": 7, "frames": 6, "fps": 6, "sort": 6, "replaces": "coffee_bar_machine" },
+    { "id": "class_tv_y_anim", "row": 8, "frames": 6, "fps": 1, "sort": 6, "replaces": "class_tv_y" },
+    { "id": "class_teacher_pc_anim", "row": 9, "frames": 4, "fps": 2, "sort": 6, "replaces": "class_teacher_pc" }
+  ],
+  "strips": [
+    { "id": "turnstile_gate_open", "row": 10, "frames": 4, "fps": 10, "sort": 6, "replaces": "turnstile_gate_y" },
+    { "id": "door_x_open", "row": 11, "frames": 4, "fps": 10, "sort": -12, "replaces": "door_x" },
+    { "id": "door_y_open", "row": 12, "frames": 4, "fps": 10, "sort": -12, "replaces": "door_y" },
+    { "id": "glass_door_x_open", "row": 13, "frames": 4, "fps": 10, "sort": -12, "replaces": "glass_door_x" },
+    { "id": "glass_door_y_open", "row": 14, "frames": 4, "fps": 10, "sort": 6, "replaces": "glass_door_y" }
+  ]
+}

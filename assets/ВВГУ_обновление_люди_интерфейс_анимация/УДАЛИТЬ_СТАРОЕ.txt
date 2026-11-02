@@ -1,0 +1,4 @@
+﻿Эти файлы из прошлой версии больше не нужны, их можно удалить:
+godot_4_7\assets\hero_temp.png
+iso_64x32\hero_temp.ase
+iso_64x32\hero_temp.png

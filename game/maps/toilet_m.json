@@ -1,0 +1,139 @@
+{
+  "id": "toilet_m",
+  "title": "Мужской туалет",
+  "size": [
+    6,
+    8
+  ],
+  "floor": "floor_b",
+  "under": "",
+  "spawn": [
+    2,
+    6
+  ],
+  "rows": [
+    "......",
+    ".#.#..",
+    "......",
+    "......",
+    "....#.",
+    "....#.",
+    "......",
+    "  DD  "
+  ],
+  "walls": [
+    {
+      "x": 0,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "tile": "wall_y"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "tile": "wall_y",
+      "cutaway": true
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "tile": "wall_y",
+      "cutaway": true
+    }
+  ],
+  "props": [],
+  "fixtures": [
+    {
+      "x": 1,
+      "y": 1,
+      "type": "toilet"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "type": "toilet"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "type": "sink"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "type": "sink"
+    }
+  ],
+  "labels": [],
+  "exits": [
+    {
+      "rect": [
+        2,
+        7,
+        2,
+        1
+      ],
+      "to": "corridor_1",
+      "spawn": [
+        9,
+        8
+      ],
+      "label": "Выйти в коридор 1 этажа"
+    }
+  ],
+  "npcs": []
+}

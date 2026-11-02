@@ -1,0 +1,60 @@
+{
+  "entrance": [
+    { "who": "guard", "x": 19, "y": 11, "facing": "sw", "pose": "idle" },
+    { "who": "wardrobe", "x": 8, "y": 2, "facing": "sw", "pose": "idle" },
+    { "who": "wardrobe", "x": 13, "y": 2, "facing": "sw", "pose": "idle" },
+    { "who": "student_1", "x": 9, "y": 4, "facing": "ne", "pose": "idle" },
+    { "who": "student_5", "x": 14, "y": 4, "facing": "ne", "pose": "idle" },
+    { "who": "student_7", "x": 8, "y": 11, "facing": "sw", "pose": "sit" },
+    { "who": "student_2", "x": 13, "y": 11, "facing": "sw", "pose": "sit" },
+    { "who": "student_4", "x": 16, "y": 8, "facing": "w", "pose": "walk" }
+  ],
+  "corridor_4": [
+    { "who": "teacher_f", "x": 22, "y": 2, "facing": "e", "pose": "idle" },
+    { "who": "student_6", "x": 27, "y": 1, "facing": "se", "pose": "idle" },
+    { "who": "student_3", "x": 28, "y": 1, "facing": "nw", "pose": "idle" },
+    { "who": "student_8", "x": 12, "y": 0, "facing": "sw", "pose": "sit" },
+    { "who": "student_1", "x": 17, "y": 2, "facing": "w", "pose": "walk" }
+  ],
+  "class_1421": [
+    { "who": "teacher_m", "x": 3, "y": 8, "facing": "ne", "pose": "type" },
+    { "who": "teacher_f", "x": 1, "y": 3, "facing": "se", "pose": "idle" },
+    { "who": "student_1", "x": 2, "y": 1, "facing": "sw", "pose": "type" },
+    { "who": "student_2", "x": 4, "y": 1, "facing": "sw", "pose": "type" },
+    { "who": "student_3", "x": 8, "y": 1, "facing": "sw", "pose": "type" },
+    { "who": "student_4", "x": 10, "y": 1, "facing": "sw", "pose": "type" },
+    { "who": "student_5", "x": 3, "y": 4, "facing": "sw", "pose": "type" },
+    { "who": "student_6", "x": 5, "y": 4, "facing": "sw", "pose": "type" },
+    { "who": "student_7", "x": 7, "y": 4, "facing": "sw", "pose": "type" },
+    { "who": "student_8", "x": 9, "y": 4, "facing": "sw", "pose": "type" }
+  ],
+  "ander": [
+    { "who": "guard", "x": 9, "y": 6, "facing": "sw", "pose": "idle" },
+    { "who": "mentor", "x": 10, "y": 10, "facing": "w", "pose": "idle" },
+    { "who": "student_1", "x": 24, "y": 11, "facing": "se", "pose": "idle" },
+    { "who": "student_5", "x": 25, "y": 11, "facing": "nw", "pose": "idle" },
+    { "who": "student_7", "x": 24, "y": 12, "facing": "ne", "pose": "idle" },
+    { "who": "student_3", "x": 38, "y": 10, "facing": "se", "pose": "idle" },
+    { "who": "student_6", "x": 39, "y": 10, "facing": "nw", "pose": "idle" },
+    { "who": "student_2", "x": 18, "y": 9, "facing": "e", "pose": "walk" },
+    { "who": "student_8", "x": 32, "y": 8, "facing": "w", "pose": "walk" },
+    { "who": "student_4", "x": 34, "y": 14, "facing": "sw", "pose": "sit" },
+    { "who": "teacher_m", "x": 45, "y": 14, "facing": "sw", "pose": "sit" },
+    { "who": "teacher_f", "x": 46, "y": 12, "facing": "ne", "pose": "idle" },
+    { "who": "barista", "x": 21, "y": 35, "facing": "ne", "pose": "idle", "lift": 16 },
+    { "who": "student_7", "x": 21, "y": 33, "facing": "sw", "pose": "idle", "lift": 16 },
+    { "who": "student_2", "x": 24, "y": 32, "facing": "sw", "pose": "idle", "lift": 16 }
+  ],
+  "ander_lower": [
+    { "who": "cook", "x": 37, "y": 26, "facing": "ne", "pose": "idle" },
+    { "who": "cook", "x": 43, "y": 26, "facing": "ne", "pose": "idle" },
+    { "who": "student_1", "x": 38, "y": 24, "facing": "ne", "pose": "idle" },
+    { "who": "student_4", "x": 34, "y": 21, "facing": "se", "pose": "sit" },
+    { "who": "student_6", "x": 36, "y": 21, "facing": "nw", "pose": "sit" },
+    { "who": "student_8", "x": 38, "y": 23, "facing": "se", "pose": "sit" },
+    { "who": "student_3", "x": 42, "y": 21, "facing": "se", "pose": "sit" },
+    { "who": "student_5", "x": 44, "y": 21, "facing": "nw", "pose": "sit" },
+    { "who": "student_2", "x": 46, "y": 23, "facing": "se", "pose": "sit" },
+    { "who": "student_7", "x": 48, "y": 23, "facing": "nw", "pose": "sit" }
+  ]
+}

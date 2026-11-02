@@ -1,0 +1,164 @@
+{
+  ".": {
+    "name": "floor",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "D": {
+    "name": "door",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "Y": {
+    "name": "theatre_doors",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "G": {
+    "name": "glazing",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "A": {
+    "name": "aquarium",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "W": {
+    "name": "wardrobe_counter",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "g": {
+    "name": "turnstile_gate",
+    "walkable": true,
+    "floor": true,
+    "elevation": 0
+  },
+  "T": {
+    "name": "turnstile",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "K": {
+    "name": "security_post",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "N": {
+    "name": "column_navy",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "O": {
+    "name": "column_grey",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "M": {
+    "name": "column_mirror",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "L": {
+    "name": "led_screen",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "Z": {
+    "name": "canteen_door",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "Q": {
+    "name": "coffee_shop",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "B": {
+    "name": "blue_step_low",
+    "walkable": true,
+    "floor": true,
+    "elevation": 5
+  },
+  "C": {
+    "name": "blue_step_high",
+    "walkable": true,
+    "floor": true,
+    "elevation": 10
+  },
+  "P": {
+    "name": "platform",
+    "walkable": true,
+    "floor": true,
+    "elevation": 16
+  },
+  "S": {
+    "name": "stairs",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "X": {
+    "name": "photo_wall",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "H": {
+    "name": "hangers",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "E": {
+    "name": "windowsill",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "I": {
+    "name": "metal_fence",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "J": {
+    "name": "tables_and_chairs",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "F": {
+    "name": "cafe_stall",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "#": {
+    "name": "furniture",
+    "walkable": false,
+    "floor": true,
+    "elevation": 0
+  },
+  "V": {
+    "name": "opening",
+    "walkable": false,
+    "floor": false,
+    "elevation": 0
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "id": "lounge_1",
+  "title": "Зона отдыха",
+  "size": [
+    8,
+    8
+  ],
+  "floor": "floor_b",
+  "under": "",
+  "spawn": [
+    3,
+    6
+  ],
+  "rows": [
+    "........",
+    ".#....#.",
+    ".#...#..",
+    "...#....",
+    ".#......",
+    "...#....",
+    "........",
+    "   DD   "
+  ],
+  "walls": [
+    {
+      "x": 0,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "tile": "wall_y"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "tile": "wall_y"
+    }
+  ],
+  "props": [
+    {
+      "x": 1,
+      "y": 2,
+      "tile": "bench_x"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "tile": "bench_x"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "tile": "bench_x"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "tile": "table_white"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "tile": "table_white"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "tile": "plant"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "tile": "plant"
+    }
+  ],
+  "fixtures": [],
+  "labels": [],
+  "exits": [
+    {
+      "rect": [
+        3,
+        7,
+        2,
+        1
+      ],
+      "to": "corridor_1",
+      "spawn": [
+        9,
+        17
+      ],
+      "label": "Выйти в коридор 1 этажа"
+    }
+  ],
+  "npcs": [
+    {
+      "who": "student_1",
+      "x": 1,
+      "y": 2,
+      "facing": "sw",
+      "pose": "sit",
+      "solid": false
+    },
+    {
+      "who": "student_6",
+      "x": 5,
+      "y": 2,
+      "facing": "sw",
+      "pose": "sit",
+      "solid": false
+    }
+  ]
+}

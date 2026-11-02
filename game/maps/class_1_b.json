@@ -1,0 +1,433 @@
+{
+  "id": "class_1_b",
+  "title": "Аудитория 5",
+  "size": [
+    12,
+    10
+  ],
+  "floor": "floor_class",
+  "under": "",
+  "spawn": [
+    6,
+    8
+  ],
+  "rows": [
+    "............",
+    "..JJJJ.JJJJ.",
+    "..JJJJ.JJJJ.",
+    "............",
+    "..JJJJ.JJJJ.",
+    "..JJJJ.JJJJ.",
+    "............",
+    "..JJJ.......",
+    "...J.....JJ#",
+    "     DD     "
+  ],
+  "walls": [
+    {
+      "x": 0,
+      "y": 0,
+      "tile": "class_corner"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "tile": "class_wall_x"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "tile": "class_window_x"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "tile": "class_whiteboard_y"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "tile": "class_whiteboard_y"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "tile": "class_whiteboard_y"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "tile": "class_tv_y"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "tile": "class_tv_y"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "tile": "class_scheme_y"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "tile": "class_scheme_y"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "tile": "class_ac_y"
+    }
+  ],
+  "props": [
+    {
+      "x": 2,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "tile": "class_desk"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "tile": "class_desk"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "tile": "class_desk"
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "tile": "class_desk"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "tile": "class_desk"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "tile": "class_chair_north"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "tile": "class_desk"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "tile": "class_desk"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "tile": "class_desk"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "tile": "class_desk_open"
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "tile": "class_desk"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "tile": "class_desk"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "tile": "class_teacher"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "tile": "class_teacher_pc"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "tile": "class_teacher"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "tile": "class_chair"
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "tile": "class_cabinet"
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "tile": "class_cabinet"
+    },
+    {
+      "x": 11,
+      "y": 8,
+      "tile": "plant"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "tile": "doormat"
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "tile": "doormat"
+    }
+  ],
+  "exits": [
+    {
+      "rect": [
+        5,
+        9,
+        2,
+        1
+      ],
+      "to": "corridor_1",
+      "spawn": [
+        5,
+        10
+      ],
+      "label": "Выйти в коридор 1 этажа"
+    }
+  ],
+  "labels": [],
+  "npcs": [
+    {
+      "who": "teacher_m",
+      "x": 3,
+      "y": 8,
+      "facing": "ne",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "teacher_f",
+      "x": 1,
+      "y": 3,
+      "facing": "se",
+      "pose": "idle"
+    },
+    {
+      "who": "student_1",
+      "x": 2,
+      "y": 1,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_2",
+      "x": 4,
+      "y": 1,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_3",
+      "x": 8,
+      "y": 1,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_4",
+      "x": 10,
+      "y": 1,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_5",
+      "x": 3,
+      "y": 4,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_6",
+      "x": 5,
+      "y": 4,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_7",
+      "x": 7,
+      "y": 4,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    },
+    {
+      "who": "student_8",
+      "x": 9,
+      "y": 4,
+      "facing": "sw",
+      "pose": "type",
+      "solid": false
+    }
+  ]
+}
